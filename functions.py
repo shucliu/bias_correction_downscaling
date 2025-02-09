@@ -62,6 +62,7 @@ def vapor_pressure_to_specific_humidity(vapp, pa):
     Compute vapor pressure
     https://cran.r-project.org/web/packages/humidity/vignettes/humidity-measures.html
     """
+    vapp = max(0, vapp)
     hus = CON_MW_MD * vapp / (pa - (1 - CON_MW_MD) * vapp)
     return(hus)
 
